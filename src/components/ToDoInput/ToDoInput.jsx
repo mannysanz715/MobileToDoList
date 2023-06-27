@@ -4,21 +4,23 @@ function ToDoInput( { addToDo } ){
   const [formData, setFormData] = useState({
     todo: '',
   })
-  //! Trying to set function to clear input field on submit without changing the state
+
   const[inputValue, setInputValue] = useState('')
   function handleChange(text, name){
     setFormData({...formData, [name]: text})
+    setInputValue(text)
   }
+
   function clearInput(){
-    setFormData
+    setInputValue('')
   }
   function handleButtonPress(){
     addToDo(formData)
-    
+    clearInput()
   }
   return (
     <View>
-        <TextInput value={formData.todo} onChangeText={text => handleChange(text, 'todo')} placeholder="New To Do Item"/>
+        <TextInput value={inputValue} onChangeText={text => handleChange(text, 'todo')} placeholder="New To Do Item"/>
         <Button title="Submit To Do" onPress={handleButtonPress}/>
     </View>
 )
