@@ -2,7 +2,7 @@ import { View, TextInput, Form, Button, Text, BackHandler } from "react-native"
 import React, { useState } from "react"
 function ToDoInput( { addToDo } ){
   const [formData, setFormData] = useState({
-    todo: '',
+    todo: '', isChecked : false,
   })
 
   const[inputValue, setInputValue] = useState('')

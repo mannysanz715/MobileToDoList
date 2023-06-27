@@ -3,14 +3,17 @@ import { View, Text, StyleSheet } from 'react-native'
 import BouceyCheckbox from "react-native-bouncy-checkbox"
 
 function ToDoItem ({toDo}) {
-  const [isChecked, setIsChecked] = useState(false)
+  const [toDoState, setToDoState] = useState({
+    todo : toDo.todo, isChecked : false,
+  })
   function handleCheckPress(){
-    setIsChecked(!isChecked)
+    setToDoState({...toDoState, isChecked : !toDoState.isChecked})
   }
+  
   return (
     <View style={styles.container}>
       <BouceyCheckbox onPress={handleCheckPress}/>
-      <Text>{toDo.todo}</Text>
+      <Text style={toDoState.isChecked && styles.slashed}>{toDo.todo}</Text>
     </View>
 )
 }
@@ -26,4 +29,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 0,
   },
+  slashed:{
+    textDecorationLine : 'line-through',
+    color : 'lightgrey',
+  }
 });
