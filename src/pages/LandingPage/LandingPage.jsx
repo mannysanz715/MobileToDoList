@@ -8,7 +8,7 @@ function LandingPage () {
   const [toDoItems, setToDoItems] = useState([])
   
   function addToDoItemsToState(newTodo){
-    setToDoItems({...toDoItems, newTodo})
+    setToDoItems([...toDoItems, newTodo]) 
   }
 
   return (
@@ -20,7 +20,9 @@ function LandingPage () {
       <ToDoInput addToDo={addToDoItemsToState}/>
 
       {toDoItems && 
-        console.log(toDoItems)
+        toDoItems.map((item, idx) =>
+          <ToDoItem key={idx} toDo={item}/>
+          )
       }
     </View>
 )
