@@ -9,13 +9,13 @@ import LandingPage from './src/pages/LandingPage/LandingPage';
 
 export default function App() {
   return (
-    <ScrollView >
+    <View style={styles.container}>
       <StatusBar
         animated={true}
         backgroundColor="#003F91"
       />
       <LandingPage />
-    </ScrollView>
+    </View>
   );
 }
 
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent : 'center',
     alignItems: 'center',
-    marginTop: 110,
+    width: '100%',
   },
 
 });

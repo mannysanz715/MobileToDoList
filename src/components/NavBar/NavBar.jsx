@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 
     navBar :{
       backgroundColor: '#003F91',
-      width: "100%",
+      width: '100%',
       height: 80,
       textAlign: 'center',
       justifyContent : 'center',

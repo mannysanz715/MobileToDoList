@@ -16,14 +16,16 @@ function LandingPage () {
     <View style={container}>
     
       <NavBar />
-    
-      <ToDoInput addToDo={addToDoItemsToState}/>
-
-      {toDoItems && 
-        toDoItems.map((item, idx) =>
+      <ScrollView>
+        {toDoItems && 
+          toDoItems.map((item, idx) =>
           <ToDoItem key={idx} toDo={item}/>
           )
-      }
+        }
+      </ScrollView>
+
+      <ToDoInput style={styles.bottomView} addToDo={addToDoItemsToState}/>
+
     </View>
 )
 }
@@ -34,9 +36,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent : 'center',
+    justifyContent : 'space-between' ,
     alignItems: 'center',
     marginTop: 0,
+    width: '100%',
+    height: '100%'
   },
-
+  bottomView: {
+    flex: 1,
+    width: '100%',
+    height: 50,
+    backgroundColor: '#EE5407',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  }
 });

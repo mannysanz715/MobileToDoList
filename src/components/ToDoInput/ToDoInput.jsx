@@ -1,4 +1,4 @@
-import { View, TextInput, Form, Button, Text, BackHandler } from "react-native"
+import { View, TextInput, StyleSheet, Button, Text, BackHandler } from "react-native"
 import React, { useState } from "react"
 function ToDoInput( { addToDo } ){
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ function ToDoInput( { addToDo } ){
     clearInput()
   }
   return (
-    <View>
+    <View style={styles.container}>
         <TextInput value={inputValue} onChangeText={text => handleChange(text, 'todo')} placeholder="New To Do Item"/>
         <Button title="Submit To Do" onPress={handleButtonPress}/>
     </View>
@@ -27,3 +27,15 @@ function ToDoInput( { addToDo } ){
 }
 
 export default ToDoInput
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    justifyContent : 'center',
+    alignItems: 'center',
+    bottom : 0
+  },
+
+});
