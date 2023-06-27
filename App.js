@@ -1,24 +1,20 @@
-import React, {useState} from 'react'
-import { ScrollView, StyleSheet, Button, Text, View } from 'react-native';
+//? Imports
+import { ScrollView, StyleSheet,StatusBar, Button, Text, View } from 'react-native';
+
+//? Page Imports
+import LandingPage from './src/pages/LandingPage/LandingPage';
+
+//? Component Imports
+
 
 export default function App() {
-const [count, setCounter] = useState(0)
-function onButtonPress(){
-  return setCounter(count + 1)
-}
   return (
     <ScrollView >
-      <View style={styles.container}>
-        <Text>Daily To Do's</Text>
-        <Text>The app that Lets you keep track of daily items. All in one organized place!</Text>
-          <Text >Hello</Text>
-        <View style={styles.buttonStyle}>
-          <Button onPress={onButtonPress} title={`${count}`}/>
-        </View>  
-      </View>
-      <View>
-
-      </View>
+      <StatusBar
+        animated={true}
+        backgroundColor="#003F91"
+      />
+      <LandingPage />
     </ScrollView>
   );
 }
@@ -31,13 +27,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 110,
   },
-  buttonStyle: {
-    backgroundColor: '#63C5DA',
-    width: 100,
-    height: 50,
-    textAlign : 'center',
-    justifyContent : 'center',
-    alignItems: "center"
 
-  }
 });
