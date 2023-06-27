@@ -9,6 +9,7 @@ function ToDoItem (toDo) {
   }
   return (
     <View>
+      <Text>{toDo}</Text>
       <BouceyCheckbox onPress={handleCheckPress}/>
     </View>
 )
